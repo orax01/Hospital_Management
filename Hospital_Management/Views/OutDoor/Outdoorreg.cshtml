@@ -1,0 +1,339 @@
+﻿@model Hospital_Management.Models.OutDoorPatient
+@{
+    ViewBag.Title = "Outdoor";
+    Layout = "~/Views/Shared/_LayoutHM.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="container-fluid">
+        <div class="card card-default">
+
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-sm-2">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Outer_ID, htmlAttributes: new { @class = "" })
+                            @Html.EditorFor(model => model.Outer_ID, new { htmlAttributes = new { @class = "form-control form-control-sm" } })
+                            @Html.ValidationMessageFor(model => model.Outer_ID, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        
+                           
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Date, htmlAttributes: new { @class = "" })
+                                <div class="input-group date" id="dateRegd" data-target-input="nearest">
+                                    @Html.EditorFor(model => model.Date, new { htmlAttributes = new { @class = "form-control form-control-sm datetimepicker-input" } })
+                                    @Html.ValidationMessageFor(model => model.Date, "", new { @class = "text-danger" })
+                                    <div class="input-group-append" data-target="#dateRegd" data-toggle="datetimepicker">
+                                        <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-2">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Patient_Id, htmlAttributes: new { @class = "" })
+                            @Html.EditorFor(model => model.Patient_Id, new { htmlAttributes = new { @class = "form-control form-control-sm", placeholder = "" } })
+                            @Html.ValidationMessageFor(model => model.Patient_Id, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Patient_Name, htmlAttributes: new { @class = "" })
+                            @Html.EditorFor(model => model.Patient_Name, new { htmlAttributes = new { @class = "form-control form-control-sm", type = "search" } })
+                            @Html.ValidationMessageFor(model => model.Patient_Name, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="col-sm-1">
+                        <div class="form-group">
+                            <button type="button" class="btn btn-primary mrgn-top17">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-2">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Patient_DOJ, htmlAttributes: new { @class = "" })
+                            <div class="input-group date" id="reservationdate" data-target-input="nearest">
+                                @Html.EditorFor(model => model.Patient_DOJ, new { htmlAttributes = new { @class = "form-control form-control-sm datetimepicker-input" } })
+                                @Html.ValidationMessageFor(model => model.Patient_DOJ, "", new { @class = "text-danger" })
+                                <div class="input-group-append" data-target="#reservationdate" data-toggle="datetimepicker">
+                                    <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-2 ">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Patient_DOB, htmlAttributes: new { @class = "" })
+                            <div class="input-group date" id="reservationdatew" data-target-input="nearest">
+                                @Html.EditorFor(model => model.Patient_DOB, new { htmlAttributes = new { @class = "form-control form-control-sm datetimepicker-input" } })
+                                @Html.ValidationMessageFor(model => model.Patient_DOB, "", new { @class = "text-danger" })
+                                <div class="input-group-append" data-target="#reservationdatew" data-toggle="datetimepicker">
+                                    <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Patient_Age, htmlAttributes: new { @class = "" })
+                            @Html.EditorFor(model => model.Patient_Age, new { htmlAttributes = new { @class = "form-control form-control-sm" } })
+                            @Html.ValidationMessageFor(model => model.Patient_Age, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Patient_Address, htmlAttributes: new { @class = "" })
+                            @Html.EditorFor(model => model.Patient_Address, new { htmlAttributes = new { @class = "form-control form-control-sm" } })
+                            @Html.ValidationMessageFor(model => model.Patient_Address, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Patient_MobileNo, htmlAttributes: new { @class = "" })
+                            @Html.EditorFor(model => model.Patient_MobileNo, new { htmlAttributes = new { @class = "form-control form-control-sm" } })
+                            @Html.ValidationMessageFor(model => model.Patient_MobileNo, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Patient_EmailId, htmlAttributes: new { @class = "" })
+                            @Html.EditorFor(model => model.Patient_EmailId, new { htmlAttributes = new { @class = "form-control form-control-sm" } })
+                            @Html.ValidationMessageFor(model => model.Patient_EmailId, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-2">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.type, htmlAttributes: new { @class = "" })
+                            @Html.EditorFor(model => model.type, new { htmlAttributes = new { @class = "form-control form-control-sm" } })
+                            @Html.ValidationMessageFor(model => model.type, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.sex, htmlAttributes: new { @class = "" })
+                            @Html.EditorFor(model => model.sex, new { htmlAttributes = new { @class = "form-control form-control-sm" } })
+                            @Html.ValidationMessageFor(model => model.sex, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Hight, htmlAttributes: new { @class = "" })
+                            @Html.EditorFor(model => model.Hight, new { htmlAttributes = new { @class = "form-control form-control-sm" } })
+                            @Html.ValidationMessageFor(model => model.Hight, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="col-sm-1">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Weight, htmlAttributes: new { @class = "" })
+                            @Html.EditorFor(model => model.Weight, new { htmlAttributes = new { @class = "form-control form-control-sm" } })
+                            @Html.ValidationMessageFor(model => model.Weight, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="col-sm-1">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.BP, htmlAttributes: new { @class = "" })
+                            @Html.EditorFor(model => model.BP, new { htmlAttributes = new { @class = "form-control form-control-sm" } })
+                            @Html.ValidationMessageFor(model => model.BP, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Care_of, htmlAttributes: new { @class = "" })
+                            @Html.EditorFor(model => model.Care_of, new { htmlAttributes = new { @class = "form-control form-control-sm" } })
+                            @Html.ValidationMessageFor(model => model.Care_of, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Care_of_Name, htmlAttributes: new { @class = "" })
+                            @Html.EditorFor(model => model.Care_of_Name, new { htmlAttributes = new { @class = "form-control form-control-sm" } })
+                            @Html.ValidationMessageFor(model => model.Care_of_Name, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Docter_Name, htmlAttributes: new { @class = " " })
+                            @Html.EditorFor(model => model.Docter_Name, new { htmlAttributes = new { @class = "form-control form-control-sm" } })
+                            @Html.ValidationMessageFor(model => model.Docter_Name, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            <label>DocterName(searchable)</label>
+                            <select class="form-control select2" style="width: 100%;">
+                                <option selected="selected">Alabama</option>
+                                <option>Alaska</option>
+                                <option>California</option>
+                                <option>Delaware</option>
+                                <option>Tennessee</option>
+                                <option>Texas</option>
+                                <option>Washington</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Docter_fee, htmlAttributes: new { @class = " " })
+                            @Html.EditorFor(model => model.Docter_fee, new { htmlAttributes = new { @class = "form-control form-control-sm" } })
+                            @Html.ValidationMessageFor(model => model.Docter_fee, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Reg_fee, htmlAttributes: new { @class = " " })
+                            @Html.EditorFor(model => model.Reg_fee, new { htmlAttributes = new { @class = "form-control  form-control-sm" } })
+                            @Html.ValidationMessageFor(model => model.Reg_fee, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Other_dorfee, htmlAttributes: new { @class = " " })
+                            @Html.EditorFor(model => model.Other_dorfee, new { htmlAttributes = new { @class = "form-control form-control-sm" } })
+                            @Html.ValidationMessageFor(model => model.Other_dorfee, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-8">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Comment, htmlAttributes: new { @class = " " })
+                            @Html.EditorFor(model => model.Comment, new { htmlAttributes = new { @class = "form-control form-control-sm", } })
+                            @Html.ValidationMessageFor(model => model.Comment, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Office, htmlAttributes: new { @class = " " })
+                            @Html.EditorFor(model => model.Office, new { htmlAttributes = new { @class = "form-control form-control-sm" } })
+                            @Html.ValidationMessageFor(model => model.Office, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </div>
+
+                @*<div class="row">
+                        <div class="col-md-12">
+                            <table class="table table-striped">
+                                <tr>
+                                    <td>Slno</td>
+                                    <td><input type="text" class="form-control form-control-sm" placeholder="Enter ..."></td>
+                                    <td><input type="text" class="form-control form-control-sm" placeholder="Enter ..."></td>
+                                    <td><input type="text" class="form-control form-control-sm" placeholder="Enter ..."></td>
+                                    <td><input type="text" class="form-control form-control-sm" placeholder="Enter ..."></td>
+                                    <td><input type="text" class="form-control form-control-sm" placeholder="Enter ..."></td>
+                                    <td><button class="btn btn-default">Add</button></td>
+                                </tr>
+                                <tr>
+                                    <td>01</td>
+                                    <td>Doctor Name</td>
+                                    <td>Doctor Time</td>
+                                    <td>Doctor Drtails</td>
+                                    <td>Doctor Drtails</td>
+                                    <td>Doctor Drtails</td>
+                                    <td><i class="fa fa-eye"></i> | <i class="fa fa-edit"></i> | <i class="fa fa-remove-format"></i></td>
+                                </tr>
+                                <tr>
+                                    <td>02</td>
+                                    <td>Retailer Name</td>
+                                    <td>Retailer Time</td>
+                                    <td>Retailer Drtails</td>
+                                    <td>Doctor Drtails</td>
+                                    <td>Doctor Drtails</td>
+                                    <td><i class="fa fa-eye"></i> | <i class="fa fa-edit"></i> | <i class="fa fa-remove-format"></i></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>*@
+
+                <div class="row">
+                    <div class="offset-sm-8 col-sm-2">
+                        <input type="button" value="Clear" class="btn btn-block bg-gradient-danger btn-sm" />
+                    </div>
+                    <div class="col-sm-2">
+                        <input type="button" id="btnSubmit" value="Submit" class="btn btn-block bg-gradient-primary btn-sm" />
+                    </div>
+                </div>
+
+                <hr />
+            </div>
+
+        </div>
+    </div>
+}
+
+<script type="text/jscript">
+    $(document).ready(function () {
+
+        //Date range picker
+        $('#reservationdate').datetimepicker({
+            format: 'L'
+        });
+        $('#reservationdatew').datetimepicker({
+            format: 'L'
+        });
+        $('#dateRegd').datetimepicker({
+            format: 'L'
+        });
+
+        
+
+        $("#btnSubmit").click(function () {
+            debugger;
+         
+            var formObj = {
+                Outer_ID: $('#Outer_ID').val(),
+                Date: $('#Date').val(),
+                Patient_Id: $('#Patient_Id').val(),
+                Patient_Name: $('#Patient_Name').val(),
+                Patient_DOJ: $('#Patient_DOJ').val(),
+                Patient_DOB: $('#Patient_DOB').val(),
+                Patient_Age: $('#Patient_Age').val(),
+                Patient_Address: $('#Patient_Address').val(),
+                Patient_MobileNo: $('#Patient_MobileNo').val(),
+                Patient_EmailId: $('#Patient_EmailId').val(),
+                type: $('#type').val(),
+                sex: $('#sex').val(),
+                Hight: $('#Hight').val(),
+                Weight: $('#Weight').val(),
+                BP: $('#BP').val(),
+                Care_of: $('#Care_of').val(),
+                Care_of_Name: $('#Care_of_Name').val(),
+                Docter_Name: $('#Docter_Name').val(),
+                Docter_fee: $('#Docter_fee').val(),
+                Reg_fee: $('#Reg_fee').val(),
+                Other_dorfee: $('#Other_dorfee').val(),
+                Comment: $('#Comment').val(),
+                Office: $('#Office').val()
+            }
+            $.ajax({
+                contentType: 'application/json; charset=utf-8',
+                dataType: 'json',
+                url: "/OutDoor/SubmiOutDoor",
+                type: "POST",
+                data: JSON.stringify({ obj: formObj }),
+                success: function (obj) {
+                    $(':input').val('');//clear all field
+                }
+            });
+        });
+
+        //*end of document.ready()*//
+    });
+</script>

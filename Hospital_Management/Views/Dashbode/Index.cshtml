@@ -1,0 +1,527 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutHM.cshtml";
+}
+
+<div class="container-fluid">
+    <div class="row">
+
+        <div class="col-md-12">
+            <!-- general form elements disabled -->
+            <div class="card card-warning">
+                <div class="card-header">
+
+                    <h3 class="card-title">Welcome to Sanjeevani Medicare</h3>
+
+                </div>
+                <!-- /.card-header -->
+                <!--<div id="divTable">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <table class="table table-striped">
+                                <tr>
+                                    <td>Slno</td>
+                                    <td>Name</td>
+                                    <td>Time</td>
+                                    <td>Details</td>
+                                    <td>Action</td>
+                                </tr>
+
+                                <tr>
+                                    <td>01</td>
+                                    <td>Doctor Name</td>
+                                    <td>Doctor Time</td>
+                                    <td>Doctor Drtails</td>
+                                    <td>View | Edit | Delete</td>
+                                </tr>
+                                <tr>
+                                    <td>02</td>
+                                    <td>Retailer Name</td>
+                                    <td>Retailer Time</td>
+                                    <td>Retailer Drtails</td>
+                                    <td>View | Edit | Delete</td>
+                                </tr>
+
+                            </table>
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <div id="divDetails">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <div class="form-group1">
+                                    <label>Outdoor No</label>
+                                    <input id="outDoorId" class="form-control form-control-sm" type="text" placeholder="">
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="form-group1">
+                                    <label>Date:</label>
+                                    <div class="input-group date" id="reservationdate" data-target-input="nearest">
+                                        <input type="text" class="form-control form-control-sm datetimepicker-input" data-target="#reservationdate" />
+                                        <div class="input-group-append" data-target="#reservationdate" data-toggle="datetimepicker">
+                                            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="form-group1">
+                                    <label>Time</label>
+                                    <input type="text" class="form-control form-control-sm" placeholder="Enter ...">
+                                </div>
+                            </div>
+                            <div class="offset-2 col-sm-1 ">
+                                <i class="fa fa-print" style="font-size:48px;"></i>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-sm-2">
+                                <div class="form-group1">
+                                    <label>Pataine Id</label>
+                                    <input type="text" class="form-control form-control-sm" placeholder="Enter ...">
+                                </div>
+                            </div>
+                            <div class="col-sm-5">
+                                <div class="form-group1">
+                                    <label>Search Name</label>
+                                    <input type="text" class="form-control form-control-sm" placeholder="Enter ...">
+                                </div>
+                            </div>
+                            <div class="col-sm-5">
+                                <div class="form-group1">
+                                    <label>Docter</label>
+                                    <input type="text" class="form-control form-control-sm" placeholder="Enter ...">
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                        <div class="row">
+
+                            <div class="col-sm-4">
+                                <div class="form-group1">
+                                    <label>Name</label>
+                                    <input type="text" class="form-control form-control-sm" placeholder="Enter ...">
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="form-group1">
+                                    <label>Son Of</label>
+                                    <input type="text" class="form-control form-control-sm" placeholder="Enter ...">
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="form-group1">
+                                    <label>Mobile</label>
+                                    <input type="text" class="form-control form-control-sm" placeholder="Enter ...">
+                                </div>
+                            </div>
+
+                        </div>
+
+
+
+
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="form-group1">
+                                    <label>Address</label>
+                                    <input type="text" class="form-control form-control-sm" placeholder="Enter ...">
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="row">
+                            <div class="col-sm-2">
+                                <div class="form-group1">
+                                    <label>Age</label>
+                                    <input type="text" class="form-control form-control-sm" placeholder="Enter ...">
+                                </div>
+                            </div>
+                            <div class="col-sm-2">
+                                <div class="form-group">
+                                    <label>Sex</label>
+                                    <input type="text" class="form-control form-control-sm" placeholder="Enter ...">
+                                </div>
+                            </div>
+                            <div class="col-sm-2">
+                                <div class="form-group">
+                                    <label>Height</label>
+                                    <input type="text" class="form-control form-control-sm" placeholder="Enter ...">
+                                </div>
+                            </div>
+                            <div class="col-sm-2">
+                                <div class="form-group">
+                                    <label>Weight</label>
+                                    <input type="text" class="form-control form-control-sm" placeholder="Enter ...">
+                                </div>
+                            </div>
+                            <div class="col-sm-2">
+                                <div class="form-group">
+                                    <label>BP</label>
+                                    <input type="text" class="form-control form-control-sm" placeholder="Enter ...">
+                                </div>
+                            </div>
+                            <div class="col-sm-2">
+                                <div class="form-group">
+                                    <label>Docter Fee</label>
+                                    <input type="text" class="form-control form-control-sm" placeholder="Enter ...">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-sm-2">
+                                <div class="form-group">
+                                    <label>Regd Fee</label>
+                                    <input type="text" class="form-control form-control-sm" placeholder="Enter ...">
+                                </div>
+                            </div>
+                            <div class="col-sm-2">
+                                <div class="form-group">
+                                    <label>Other Fee Docter</label>
+                                    <input type="text" class="form-control form-control-sm" placeholder="Enter ...">
+                                </div>
+                            </div>
+                            <div class="col-sm-2">
+                                <div class="form-group">
+                                    <label>Office</label>
+                                    <input type="text" class="form-control form-control-sm" placeholder="Enter ...">
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label>Commet</label>
+                                    <textarea class="form-control form-control-sm" rows="3" placeholder="Enter ..."></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="offset-sm-8 col-sm-2">
+                                <input type="button" value="Clear" class="btn btn-block bg-gradient-danger btn-sm" />
+                            </div>
+                            <div class="col-sm-2">
+                                <input type="button" id="btnAdd" value="Add" class="btn btn-block bg-gradient-primary btn-sm" />
+                            </div>
+                        </div>
+
+
+
+                        <hr />-->
+                <!--<div class="row">
+                <div class="col-sm-6">-->
+                <!-- text input -->
+                <!--<div class="form-group">
+                            <label>Text</label>
+                            <input type="text" class="form-control form-control-sm" placeholder="Enter ...">
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label>Text Disabled</label>
+                            <input type="text" class="form-control form-control-sm" placeholder="Enter ...">
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="row">
+                    <div class="col-sm-6">-->
+                <!-- textarea -->
+                <!--<div class="form-group">
+                            <label>Textarea</label>
+                            <textarea class="form-control form-control-sm" rows="3" placeholder="Enter ..."></textarea>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label>Textarea Disabled</label>
+                            <textarea class="form-control form-control-sm" rows="3" placeholder="Enter ..." disabled></textarea>
+                        </div>
+                    </div>
+                </div>-->
+                <!-- input states -->
+                <!--<div class="form-group">
+                    <label class="col-form-label" for="inputSuccess">
+                        <i class="fas fa-check"></i> Input with
+                        success
+                    </label>
+                    <input type="text" class="form-control form-control-sm is-valid" id="inputSuccess" placeholder="Enter ...">
+                </div>
+                <div class="form-group">
+                    <label class="col-form-label" for="inputWarning">
+                        <i class="far fa-bell"></i> Input with
+                        warning
+                    </label>
+                    <input type="text" class="form-control form-control-sm is-warning" id="inputWarning" placeholder="Enter ...">
+                </div>
+                <div class="form-group">
+                    <label class="col-form-label" for="inputError">
+                        <i class="far fa-times-circle"></i> Input with
+                        error
+                    </label>
+                    <input type="text" class="form-control form-control-sm is-invalid" id="inputError" placeholder="Enter ...">
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-6">-->
+                <!-- checkbox -->
+                <!--<div class="form-group">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox">
+                            <label class="form-check-label">Checkbox</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" checked>
+                            <label class="form-check-label">Checkbox checked</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" disabled>
+                            <label class="form-check-label">Checkbox disabled</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">-->
+                <!-- radio -->
+                <!--<div class="form-group">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="radio1">
+                                <label class="form-check-label">Radio</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="radio1" checked>
+                                <label class="form-check-label">Radio checked</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" disabled>
+                                <label class="form-check-label">Radio disabled</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-6">-->
+                <!-- select -->
+                <!--<div class="form-group">
+                            <label>Select</label>
+                            <select class="form-control form-control-sm">
+                                <option>option 1</option>
+                                <option>option 2</option>
+                                <option>option 3</option>
+                                <option>option 4</option>
+                                <option>option 5</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label>Select Disabled</label>
+                            <select class="form-control form-control-sm" disabled>
+                                <option>option 1</option>
+                                <option>option 2</option>
+                                <option>option 3</option>
+                                <option>option 4</option>
+                                <option>option 5</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-6">-->
+                <!-- Select multiple-->
+                <!--<div class="form-group">
+                                <label>Select Multiple</label>
+                                <select multiple class="form-control form-control-sm">
+                                    <option>option 1</option>
+                                    <option>option 2</option>
+                                    <option>option 3</option>
+                                    <option>option 4</option>
+                                    <option>option 5</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label>Select Multiple Disabled</label>
+                                <select multiple class="form-control form-control-sm" disabled>
+                                    <option>option 1</option>
+                                    <option>option 2</option>
+                                    <option>option 3</option>
+                                    <option>option 4</option>
+                                    <option>option 5</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>-->
+                <!--</div>
+                </div>-->
+                <!--<div class="card card-secondary">
+                <div class="card-header">
+                    <h3 class="card-title">Custom Elements</h3>
+                </div>-->
+                <!-- /.card-header -->
+                <!--<div class="card-body">
+                <form>
+                    <div class="row">
+                        <div class="col-sm-6">-->
+                <!-- checkbox -->
+                <!--<div class="form-group">
+                        <div class="custom-control custom-checkbox">
+                            <input class="custom-control-input" type="checkbox" id="customCheckbox1" value="option1">
+                            <label for="customCheckbox1" class="custom-control-label">Custom Checkbox</label>
+                        </div>
+                        <div class="custom-control custom-checkbox">
+                            <input class="custom-control-input" type="checkbox" id="customCheckbox2" checked>
+                            <label for="customCheckbox2" class="custom-control-label">Custom Checkbox checked</label>
+                        </div>
+                        <div class="custom-control custom-checkbox">
+                            <input class="custom-control-input" type="checkbox" id="customCheckbox3" disabled>
+                            <label for="customCheckbox3" class="custom-control-label">Custom Checkbox disabled</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">-->
+                <!-- radio -->
+                <!--<div class="form-group">
+                            <div class="custom-control custom-radio">
+                                <input class="custom-control-input" type="radio" id="customRadio1" name="customRadio">
+                                <label for="customRadio1" class="custom-control-label">Custom Radio</label>
+                            </div>
+                            <div class="custom-control custom-radio">
+                                <input class="custom-control-input" type="radio" id="customRadio2" name="customRadio" checked>
+                                <label for="customRadio2" class="custom-control-label">Custom Radio checked</label>
+                            </div>
+                            <div class="custom-control custom-radio">
+                                <input class="custom-control-input" type="radio" id="customRadio3" disabled>
+                                <label for="customRadio3" class="custom-control-label">Custom Radio disabled</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-6">-->
+                <!-- select -->
+                <!--<div class="form-group">
+                            <label>Custom Select</label>
+                            <select class="custom-select">
+                                <option>option 1</option>
+                                <option>option 2</option>
+                                <option>option 3</option>
+                                <option>option 4</option>
+                                <option>option 5</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label>Custom Select Disabled</label>
+                            <select class="custom-select" disabled>
+                                <option>option 1</option>
+                                <option>option 2</option>
+                                <option>option 3</option>
+                                <option>option 4</option>
+                                <option>option 5</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-6">-->
+                <!-- Select multiple-->
+                <!--<div class="form-group">
+                            <label>Custom Select Multiple</label>
+                            <select multiple class="custom-select">
+                                <option>option 1</option>
+                                <option>option 2</option>
+                                <option>option 3</option>
+                                <option>option 4</option>
+                                <option>option 5</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label>Custom Select Multiple Disabled</label>
+                            <select multiple class="custom-select" disabled>
+                                <option>option 1</option>
+                                <option>option 2</option>
+                                <option>option 3</option>
+                                <option>option 4</option>
+                                <option>option 5</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="custom-control custom-switch">
+                        <input type="checkbox" class="custom-control-input" id="customSwitch1">
+                        <label class="custom-control-label" for="customSwitch1">Toggle this custom switch element</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success">
+                        <input type="checkbox" class="custom-control-input" id="customSwitch3">
+                        <label class="custom-control-label" for="customSwitch3">Toggle this custom switch element with custom colors danger/success</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="custom-control custom-switch">
+                        <input type="checkbox" class="custom-control-input" disabled id="customSwitch2">
+                        <label class="custom-control-label" for="customSwitch2">Disabled custom switch element</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="customRange1">Custom range</label>
+                    <input type="range" class="custom-range" id="customRange1">
+                </div>
+                <div class="form-group">
+                    <label for="customRange2">Custom range (custom-range-danger)</label>
+                    <input type="range" class="custom-range custom-range-danger" id="customRange2">
+                </div>
+                <div class="form-group">
+                    <label for="customRange3">Custom range (custom-range-teal)</label>
+                    <input type="range" class="custom-range custom-range-teal" id="customRange3">
+                </div>
+                <div class="form-group">-->
+                <!-- <label for="customFile">Custom File</label> -->
+                <!--<div class="custom-file">
+                                <input type="file" class="custom-file-input" id="customFile">
+                                <label class="custom-file-label" for="customFile">Choose file</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                        </div>
+                    </form>
+                </div>-->
+                <!-- /.card-body -->
+                <!--</div>-->
+
+            </div>
+
+        </div>
+
+
+
+
+        <!-- /.row -->
+    </div><!-- /.container-fluid -->
+</div>
+

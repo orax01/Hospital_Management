@@ -1,0 +1,25 @@
+﻿p {
+    font-size: 12px;
+}
+
+body {
+    font-size: 12px;
+}
+
+.mrgnTop {
+    margin-top: 15px;
+}
+
+label {
+    font-size: 13px;
+    margin-bottom: 0px;
+}
+
+.bg-hm-default {
+    background-color: #00bcd4;
+    color: white;
+}
+
+.mrgn-top17 {
+    margin-top: 17px;
+}
