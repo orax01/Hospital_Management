@@ -20,6 +20,7 @@ namespace Hospital_Management.Controllers
                 return RedirectToAction("Index", "Home");
             }
         }
+        //change by susant
 
     }
 }
