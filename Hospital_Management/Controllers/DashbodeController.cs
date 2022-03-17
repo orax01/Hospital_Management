@@ -24,5 +24,7 @@ namespace Hospital_Management.Controllers
         //change by satya
         //csm
 
+        //osm
+
     }
 }
