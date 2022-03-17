@@ -84,5 +84,7 @@ namespace Hospital_Management.Controllers
                 return newId;
             }
         }
+
+        //Add Function
     }
 }
