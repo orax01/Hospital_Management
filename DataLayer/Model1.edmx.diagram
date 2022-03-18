@@ -9,7 +9,10 @@
         <EntityTypeShape EntityType="Hospital_DBModel.Tbl_Patient" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="Hospital_DBModel.Tbl_User" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
         <AssociationConnector Association="Hospital_DBModel.FK_Out_Door_Tbl_Patient" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="Hospital_DBModel.Tbl_AutoIncreament" Width="1.5" PointX="3.375" PointY="5.75" />
+        <EntityTypeShape EntityType="Hospital_DBModel.Tbl_Docter" Width="1.5" PointX="5.75" PointY="4.75" />
+        <EntityTypeShape EntityType="Hospital_DBModel.Tbl_Indoor" Width="1.5" PointX="0.75" PointY="6.75" />
+        <EntityTypeShape EntityType="Hospital_DBModel.Tbl_MasterPathology" Width="1.5" PointX="7.75" PointY="4.75" />
+        <EntityTypeShape EntityType="Hospital_DBModel.Tbl_PathologyTest" Width="1.5" PointX="8.75" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

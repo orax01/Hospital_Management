@@ -12,10 +12,17 @@ namespace DataLayer
     using System;
     using System.Collections.Generic;
     
-    public partial class Tbl_AutoIncreament
+    public partial class Tbl_Docter
     {
         public int Id { get; set; }
-        public string TypeName { get; set; }
-        public int TypeLastValue { get; set; }
+        public string Docter_id { get; set; }
+        public string Docter_Name { get; set; }
+        public Nullable<System.DateTime> DOG { get; set; }
+        public string Total_exeprience { get; set; }
+        public Nullable<int> Age { get; set; }
+        public string Qualification { get; set; }
+        public Nullable<int> Free { get; set; }
+        public string Working_hours { get; set; }
+        public string Degination { get; set; }
     }
 }

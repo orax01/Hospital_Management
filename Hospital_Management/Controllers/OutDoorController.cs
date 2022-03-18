@@ -19,7 +19,7 @@ namespace Hospital_Management.Controllers
 
             ViewBag.page = "OutDoor";
             OutDoorPatient outDoorPatient = new OutDoorPatient();
-            outDoorPatient.Outer_ID = generatesno();
+          //  outDoorPatient.Outer_ID = generatesno();
             return View(outDoorPatient);
         }
 
@@ -62,12 +62,12 @@ namespace Hospital_Management.Controllers
                     db.Out_Door.Add(OD);
                     db.Tbl_Patient.Add(PT);
 
-                    var lastId = db.Tbl_AutoIncreament.Where(x => x.TypeName == "outDoor").FirstOrDefault();
-                    lastId.TypeLastValue = HMCustomLogics.getNumberOnly(obj.Outer_ID, 2);//OT00001
+                   // var lastId = db.Tbl_AutoIncreament.Where(x => x.TypeName == "outDoor").FirstOrDefault();
+                   // lastId.TypeLastValue = HMCustomLogics.getNumberOnly(obj.Outer_ID, 2);//OT00001
 
                     db.SaveChanges();
                 }
-                catch (Exception ex)
+                catch (Exception )
                 {
                     return Json("2");//1= success, 2=failuer
                 }
@@ -75,15 +75,15 @@ namespace Hospital_Management.Controllers
             return Json("1");//1= success, 2=failuer
         }
 
-        private string generatesno()
-        {
-            using (Hospital_DBEntities db = new Hospital_DBEntities())
-            {
-                var lastId = db.Tbl_AutoIncreament.Where(x => x.TypeName == "outDoor").FirstOrDefault();
-                var newId = HMCustomLogics.getAutoIncreamentId(lastId.TypeLastValue);
-                return newId;
-            }
-        }
+        //private string generatesno()
+        //{
+        //    using (Hospital_DBEntities db = new Hospital_DBEntities())
+        //    {
+        //        var lastId = db.Tbl_AutoIncreament.Where(x => x.TypeName == "outDoor").FirstOrDefault();
+        //        var newId = HMCustomLogics.getAutoIncreamentId(lastId.TypeLastValue);
+        //        return newId;
+        //    }
+        //}
 
         //Add Function
     }

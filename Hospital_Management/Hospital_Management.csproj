@@ -125,16 +125,24 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\DashbodeController.cs" />
+    <Compile Include="Controllers\DocterMasterController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\IndoorController.cs" />
     <Compile Include="Controllers\OutDoorController.cs" />
+    <Compile Include="Controllers\PathologyTestController.cs" />
     <Compile Include="CustomLogics\HMCustomLogics.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Common.cs" />
+    <Compile Include="Models\DocterMaster.cs" />
+    <Compile Include="Models\Indoor.cs" />
     <Compile Include="Models\OutDoor.cs" />
     <Compile Include="Models\PaitentOutdoorViewMode.cs" />
     <Compile Include="Models\OutDoorPatient.cs" />
+    <Compile Include="Models\PathalogyMaster.cs" />
+    <Compile Include="Models\PathalogyMasterController.cs" />
+    <Compile Include="Models\PathologyTest.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -1977,6 +1985,10 @@
     <Content Include="Views\Dashbode\Index.cshtml" />
     <Content Include="Views\OutDoor\Outdoorreg.cshtml" />
     <Content Include="Views\Shared\_LayoutHM.cshtml" />
+    <Content Include="Views\Indoor\Index.cshtml" />
+    <Content Include="Views\DocterMaster\Index.cshtml" />
+    <Content Include="Views\PathalogyMaster\Index.cshtml" />
+    <Content Include="Views\PathologyTest\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

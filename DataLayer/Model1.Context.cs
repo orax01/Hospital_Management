@@ -28,6 +28,9 @@ namespace DataLayer
         public virtual DbSet<Out_Door> Out_Door { get; set; }
         public virtual DbSet<Tbl_Patient> Tbl_Patient { get; set; }
         public virtual DbSet<Tbl_User> Tbl_User { get; set; }
-        public virtual DbSet<Tbl_AutoIncreament> Tbl_AutoIncreament { get; set; }
+        public virtual DbSet<Tbl_Docter> Tbl_Docter { get; set; }
+        public virtual DbSet<Tbl_Indoor> Tbl_Indoor { get; set; }
+        public virtual DbSet<Tbl_MasterPathology> Tbl_MasterPathology { get; set; }
+        public virtual DbSet<Tbl_PathologyTest> Tbl_PathologyTest { get; set; }
     }
 }

@@ -20,13 +20,65 @@
           <Property Name="Other_dorfee" Type="numeric" Precision="18" Scale="2" />
           <Property Name="Office" Type="nvarchar" MaxLength="50" />
         </EntityType>
-        <EntityType Name="Tbl_AutoIncreament">
+        <EntityType Name="Tbl_Docter">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="Docter_id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="TypeName" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="TypeLastValue" Type="int" Nullable="false" />
+          <Property Name="Docter_id" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Docter_Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="DOG" Type="datetime" />
+          <Property Name="Total_exeprience" Type="nvarchar" MaxLength="50" />
+          <Property Name="Age" Type="int" />
+          <Property Name="Qualification" Type="nvarchar" MaxLength="50" />
+          <Property Name="Free" Type="int" />
+          <Property Name="Working_hours" Type="nvarchar" MaxLength="50" />
+          <Property Name="Degination" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Tbl_Indoor">
+          <Key>
+            <PropertyRef Name="Record_No" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Record_No" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="OutDoorID" Type="nvarchar" MaxLength="50" />
+          <Property Name="PaitentId" Type="nvarchar" MaxLength="50" />
+          <Property Name="Admiction_Date" Type="datetime" />
+          <Property Name="Cabin_No" Type="nvarchar" MaxLength="50" />
+          <Property Name="OutDoorDocter" Type="nvarchar" MaxLength="50" />
+          <Property Name="Consoltant_Docter" Type="nvarchar" MaxLength="50" />
+          <Property Name="INdoor_No" Type="nvarchar" MaxLength="50" />
+          <Property Name="Provisional_deg" Type="nvarchar" MaxLength="500" />
+          <Property Name="Comment" Type="nvarchar" MaxLength="500" />
+          <Property Name="Paitent_Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Date_Opperaton" Type="datetime" />
+          <Property Name="Sex" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Tbl_MasterPathology">
+          <Key>
+            <PropertyRef Name="Tset_ID" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Test_Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Ammout" Type="int" />
+          <Property Name="Requard_time" Type="nvarchar" MaxLength="50" />
+          <Property Name="Tset_ID" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Type" Type="nvarchar" MaxLength="50" />
+          <Property Name="status" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Tbl_PathologyTest">
+          <Key>
+            <PropertyRef Name="Test_id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Test_id" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Test_Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Paitent_Id" Type="nvarchar" MaxLength="50" />
+          <Property Name="Outdoor_Id" Type="nvarchar" MaxLength="50" />
+          <Property Name="Type" Type="nvarchar" MaxLength="50" />
+          <Property Name="Fee" Type="int" />
+          <Property Name="Date" Type="datetime" />
+          <Property Name="Test_by" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="Tbl_Patient">
           <Key>
@@ -76,7 +128,10 @@
         </Association>
         <EntityContainer Name="Hospital_DBModelStoreContainer">
           <EntitySet Name="Out_Door" EntityType="Self.Out_Door" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Tbl_AutoIncreament" EntityType="Self.Tbl_AutoIncreament" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbl_Docter" EntityType="Self.Tbl_Docter" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbl_Indoor" EntityType="Self.Tbl_Indoor" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbl_MasterPathology" EntityType="Self.Tbl_MasterPathology" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbl_PathologyTest" EntityType="Self.Tbl_PathologyTest" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Tbl_Patient" EntityType="Self.Tbl_Patient" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Tbl_User" EntityType="Self.Tbl_User" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_Out_Door_Tbl_Patient" Association="Self.FK_Out_Door_Tbl_Patient">
@@ -159,15 +214,70 @@
             <End Role="Tbl_Patient" EntitySet="Tbl_Patient" />
             <End Role="Out_Door" EntitySet="Out_Door" />
           </AssociationSet>
-          <EntitySet Name="Tbl_AutoIncreament" EntityType="Hospital_DBModel.Tbl_AutoIncreament" />
+          <EntitySet Name="Tbl_Docter" EntityType="Hospital_DBModel.Tbl_Docter" />
+          <EntitySet Name="Tbl_Indoor" EntityType="Hospital_DBModel.Tbl_Indoor" />
+          <EntitySet Name="Tbl_MasterPathology" EntityType="Hospital_DBModel.Tbl_MasterPathology" />
+          <EntitySet Name="Tbl_PathologyTest" EntityType="Hospital_DBModel.Tbl_PathologyTest" />
         </EntityContainer>
-        <EntityType Name="Tbl_AutoIncreament">
+        <EntityType Name="Tbl_Docter">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="Docter_id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="TypeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="TypeLastValue" Type="Int32" Nullable="false" />
+          <Property Name="Docter_id" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Docter_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DOG" Type="DateTime" Precision="3" />
+          <Property Name="Total_exeprience" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Age" Type="Int32" />
+          <Property Name="Qualification" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Free" Type="Int32" />
+          <Property Name="Working_hours" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Degination" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Tbl_Indoor">
+          <Key>
+            <PropertyRef Name="Record_No" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Record_No" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="OutDoorID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PaitentId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Admiction_Date" Type="DateTime" Precision="3" />
+          <Property Name="Cabin_No" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="OutDoorDocter" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Consoltant_Docter" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="INdoor_No" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Provisional_deg" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Comment" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Paitent_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Date_Opperaton" Type="DateTime" Precision="3" />
+          <Property Name="Sex" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Tbl_MasterPathology">
+          <Key>
+            <PropertyRef Name="Tset_ID" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Test_Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Ammout" Type="Int32" />
+          <Property Name="Requard_time" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Tset_ID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="status" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Tbl_PathologyTest">
+          <Key>
+            <PropertyRef Name="Test_id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Test_id" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Test_Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Paitent_Id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Outdoor_Id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Fee" Type="Int32" />
+          <Property Name="Date" Type="DateTime" Precision="3" />
+          <Property Name="Test_by" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -227,11 +337,66 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Tbl_AutoIncreament">
-            <EntityTypeMapping TypeName="Hospital_DBModel.Tbl_AutoIncreament">
-              <MappingFragment StoreEntitySet="Tbl_AutoIncreament">
-                <ScalarProperty Name="TypeLastValue" ColumnName="TypeLastValue" />
-                <ScalarProperty Name="TypeName" ColumnName="TypeName" />
+          <EntitySetMapping Name="Tbl_Docter">
+            <EntityTypeMapping TypeName="Hospital_DBModel.Tbl_Docter">
+              <MappingFragment StoreEntitySet="Tbl_Docter">
+                <ScalarProperty Name="Degination" ColumnName="Degination" />
+                <ScalarProperty Name="Working_hours" ColumnName="Working_hours" />
+                <ScalarProperty Name="Free" ColumnName="Free" />
+                <ScalarProperty Name="Qualification" ColumnName="Qualification" />
+                <ScalarProperty Name="Age" ColumnName="Age" />
+                <ScalarProperty Name="Total_exeprience" ColumnName="Total_exeprience" />
+                <ScalarProperty Name="DOG" ColumnName="DOG" />
+                <ScalarProperty Name="Docter_Name" ColumnName="Docter_Name" />
+                <ScalarProperty Name="Docter_id" ColumnName="Docter_id" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_Indoor">
+            <EntityTypeMapping TypeName="Hospital_DBModel.Tbl_Indoor">
+              <MappingFragment StoreEntitySet="Tbl_Indoor">
+                <ScalarProperty Name="Sex" ColumnName="Sex" />
+                <ScalarProperty Name="Date_Opperaton" ColumnName="Date_Opperaton" />
+                <ScalarProperty Name="Paitent_Name" ColumnName="Paitent_Name" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+                <ScalarProperty Name="Provisional_deg" ColumnName="Provisional_deg" />
+                <ScalarProperty Name="INdoor_No" ColumnName="INdoor_No" />
+                <ScalarProperty Name="Consoltant_Docter" ColumnName="Consoltant_Docter" />
+                <ScalarProperty Name="OutDoorDocter" ColumnName="OutDoorDocter" />
+                <ScalarProperty Name="Cabin_No" ColumnName="Cabin_No" />
+                <ScalarProperty Name="Admiction_Date" ColumnName="Admiction_Date" />
+                <ScalarProperty Name="PaitentId" ColumnName="PaitentId" />
+                <ScalarProperty Name="OutDoorID" ColumnName="OutDoorID" />
+                <ScalarProperty Name="Record_No" ColumnName="Record_No" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_MasterPathology">
+            <EntityTypeMapping TypeName="Hospital_DBModel.Tbl_MasterPathology">
+              <MappingFragment StoreEntitySet="Tbl_MasterPathology">
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Tset_ID" ColumnName="Tset_ID" />
+                <ScalarProperty Name="Requard_time" ColumnName="Requard_time" />
+                <ScalarProperty Name="Ammout" ColumnName="Ammout" />
+                <ScalarProperty Name="Test_Name" ColumnName="Test_Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_PathologyTest">
+            <EntityTypeMapping TypeName="Hospital_DBModel.Tbl_PathologyTest">
+              <MappingFragment StoreEntitySet="Tbl_PathologyTest">
+                <ScalarProperty Name="Test_by" ColumnName="Test_by" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Fee" ColumnName="Fee" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Outdoor_Id" ColumnName="Outdoor_Id" />
+                <ScalarProperty Name="Paitent_Id" ColumnName="Paitent_Id" />
+                <ScalarProperty Name="Test_Name" ColumnName="Test_Name" />
+                <ScalarProperty Name="Test_id" ColumnName="Test_id" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
