@@ -6,93 +6,206 @@
 }
 
 
+@*@using (Html.BeginForm("OutDoorReg", "OutDoor", FormMethod.Post, new { @autocomplete = "off" }))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="container-fluid">
+            <div class="card card-default">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Outer_ID, htmlAttributes: new { @class = "" })
+                                @Html.EditorFor(model => model.Outer_ID, new { htmlAttributes = new { @class = "form-control form-control-sm" } })
+                                @Html.ValidationMessageFor(model => model.Outer_ID, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="col-sm-2">
 
-@using (Html.BeginForm()) 
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Date, htmlAttributes: new { @class = "" })
+                                <div class="input-group date" id="dateRegd" data-target-input="nearest">
+                                    @Html.EditorFor(model => model.Date, new { htmlAttributes = new { @class = "form-control form-control-sm datetimepicker-input" } })
+                                    <div class="input-group-append" data-target="#dateRegd" data-toggle="datetimepicker">
+                                        <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                    </div>
+                                    @Html.ValidationMessageFor(model => model.Date, "", new { @class = "text-danger" })
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="offset-sm-8 col-sm-2">
+                            <input type="submit" value="Clear" class="btn btn-block bg-gradient-danger btn-sm" />
+                        </div>
+                        <div class="col-sm-2">
+                            <input type="submit" id="btnSubmit" value="Submit" class="btn btn-block bg-gradient-primary btn-sm" />
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    }*@
+
+
+
+
+@using (Html.BeginForm("Index", "DocterMaster", FormMethod.Post, new { @autocomplete = "off" }))
 {
     @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
-        <h4>Docter Registration</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.Docter_id, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Docter_id, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Docter_id, "", new { @class = "text-danger" })
-            </div>
-        </div>
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="container-fluid">
+        <div class="card card-default">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Docter_id, htmlAttributes: new { @class = "reqired-hm" })
+                            @Html.EditorFor(model => model.Docter_id, new { htmlAttributes = new { @class = "form-control form-control-sm" } })
+                            @Html.ValidationMessageFor(model => model.Docter_id, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Docter_Name, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Docter_Name, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Docter_Name, "", new { @class = "text-danger" })
-            </div>
-        </div>
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Docter_Name, htmlAttributes: new { @class = "reqired-hm" })
+                            @Html.EditorFor(model => model.Docter_Name, new { htmlAttributes = new { @class = "form-control form-control-sm" } })
+                            @Html.ValidationMessageFor(model => model.Docter_Name, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.DOG, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.DOG, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.DOG, "", new { @class = "text-danger" })
-            </div>
-        </div>
+                    <div class="col-sm-3">
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Total_exeprience, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Total_exeprience, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Total_exeprience, "", new { @class = "text-danger" })
-            </div>
-        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.DOG, htmlAttributes: new { @class = "" })
+                            <div class="input-group date" id="dateOfJoin" data-target-input="nearest">
+                                @Html.EditorFor(model => model.DOG, new { htmlAttributes = new { @class = "form-control form-control-sm datetimepicker-input" } })
+                                <div class="input-group-append" data-target="#dateOfJoin" data-toggle="datetimepicker">
+                                    <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                </div>
+                                @Html.ValidationMessageFor(model => model.DOG, "", new { @class = "text-danger" })
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Age, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Age, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Age, "", new { @class = "text-danger" })
-            </div>
-        </div>
+                            </div>
+                        </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Qualification, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Qualification, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Qualification, "", new { @class = "text-danger" })
-            </div>
-        </div>
+                    </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Free, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Free, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Free, "", new { @class = "text-danger" })
-            </div>
-        </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Working_hours, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Working_hours, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Working_hours, "", new { @class = "text-danger" })
-            </div>
-        </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Degination, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Degination, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Degination, "", new { @class = "text-danger" })
-            </div>
-        </div>
+                    @*<div class="col-sm-3">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.DOG, htmlAttributes: new { @class = "reqired-hm" })
+                            @Html.EditorFor(model => model.DOG, new { htmlAttributes = new { @class = "form-control form-control-sm" } })
+                            @Html.ValidationMessageFor(model => model.DOG, "", new { @class = "text-danger" })
+                        </div>
+                    </div>*@
 
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Total_exeprience, htmlAttributes: new { @class = "" })
+                            @Html.EditorFor(model => model.Total_exeprience, new { htmlAttributes = new { @class = "form-control form-control-sm" } })
+                            @Html.ValidationMessageFor(model => model.Total_exeprience, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Age, htmlAttributes: new { @class = "" })
+                            @Html.EditorFor(model => model.Age, new { htmlAttributes = new { @class = "form-control form-control-sm" } })
+                            @Html.ValidationMessageFor(model => model.Age, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Qualification, htmlAttributes: new { @class = "" })
+                            @Html.EditorFor(model => model.Qualification, new { htmlAttributes = new { @class = "form-control form-control-sm" } })
+                            @Html.ValidationMessageFor(model => model.Qualification, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Free, htmlAttributes: new { @class = "" })
+                            @Html.EditorFor(model => model.Free, new { htmlAttributes = new { @class = "form-control form-control-sm" } })
+                            @Html.ValidationMessageFor(model => model.Free, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Working_hours, htmlAttributes: new { @class = "" })
+                            @Html.EditorFor(model => model.Working_hours, new { htmlAttributes = new { @class = "form-control form-control-sm" } })
+                            @Html.ValidationMessageFor(model => model.Working_hours, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Degination, htmlAttributes: new { @class = "" })
+                            @Html.EditorFor(model => model.Degination, new { htmlAttributes = new { @class = "form-control form-control-sm" } })
+                            @Html.ValidationMessageFor(model => model.Degination, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+
+
+
+
+
+                    @*<div class="col-sm-2">
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Date, htmlAttributes: new { @class = "" })
+                                <div class="input-group date" id="dateRegd" data-target-input="nearest">
+                                    @Html.EditorFor(model => model.Date, new { htmlAttributes = new { @class = "form-control form-control-sm datetimepicker-input" } })
+                                    <div class="input-group-append" data-target="#dateRegd" data-toggle="datetimepicker">
+                                        <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                    </div>
+                                    @Html.ValidationMessageFor(model => model.Date, "", new { @class = "text-danger" })
+
+                                </div>
+                            </div>
+
+                        </div>*@
+                </div>
+
+                <div class="row">
+                    <div class="offset-sm-8 col-sm-2">
+                        <input type="submit" value="Clear" class="btn btn-block bg-gradient-danger btn-sm" />
+                    </div>
+                    <div class="col-sm-2">
+                        <input type="submit" id="btnSubmit" value="Submit" class="btn btn-block bg-gradient-primary btn-sm" />
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
 }
+
+<script type="text/jscript">
+    $(document).ready(function () {
+
+        //Date range picker
+        $('#dateOfJoin').datetimepicker({
+            format: 'L',
+        });
+    });
+</script>
+
+
+
+
+
+
 
 

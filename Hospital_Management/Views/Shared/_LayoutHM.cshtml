@@ -4,9 +4,9 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
-   
+
     @*<script src="~/Scripts/jquery.validate.min.js"></script>
-    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>*@
+        <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>*@
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome -->
@@ -32,8 +32,8 @@
     <!-- jQuery -->
     @*<script src="../../plugins/jquery/jquery.min.js"></script>*@
     <script src="~/Scripts/jquery-3.4.1.min.js"></script>
-
-
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
 
 </head>
 
@@ -239,7 +239,6 @@
         <!-- /.control-sidebar -->
     </div>
     <!-- ./wrapper -->
-    
     <!-- Bootstrap 4 -->
     <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- Select2 -->
@@ -333,6 +332,17 @@
                 $(this).bootstrapSwitch('state', $(this).prop('checked'));
             });
 
+            //*own scripts*//
+            $("<span class='red'> <b>*</b></span>").insertAfter(".reqired-hm");
+
         })</script>
+
+    <style type="text/css">
+        .red {
+            color: red;
+        }
+    </style>
+
+
 </body>
 </html>

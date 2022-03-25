@@ -7,31 +7,93 @@ namespace Hospital_Management.CustomLogics
 {
     public static class HMCustomLogics
     {
-        public static string getAutoIncreamentId(int prevNo)
+        public static string getAutoIncreamentId(int prevNo,string type)
         {
-            prevNo = prevNo + 1;
-            string newNo = string.Empty;
-            if (prevNo >= 0 && prevNo <= 9)
+            if (type == "OT")
             {
-                newNo = "OT" + "0000" + prevNo;
+                prevNo = prevNo + 1;
+                string newNo = string.Empty;
+                if (prevNo >= 0 && prevNo <= 9)
+                {
+                    newNo = "OT" + "0000" + prevNo;
+                }
+                else if (prevNo >= 10 && prevNo <= 99)
+                {
+                    newNo = "OT" + "000" + prevNo;
+                }
+                else if (prevNo >= 100 && prevNo <= 999)
+                {
+                    newNo = "OT" + "00" + prevNo;
+                }
+                else if (prevNo >= 1000 && prevNo <= 9999)
+                {
+                    newNo = "OT" + "0" + prevNo;
+                }
+                else if (prevNo >= 10000 && prevNo <= 9999)
+                {
+                    newNo = "OT" + prevNo.ToString();
+                }
+                return newNo;
             }
-            else if (prevNo >= 10 && prevNo <= 99)
+
+            if(type== "PT")
             {
-                newNo = "OT" + "000" + prevNo;
+                prevNo = prevNo + 1;
+                string newNo = string.Empty;
+                if (prevNo >= 0 && prevNo <= 9)
+                {
+                    newNo = "PT" + "0000" + prevNo;
+                }
+                else if (prevNo >= 10 && prevNo <= 99)
+                {
+                    newNo = "PT" + "000" + prevNo;
+                }
+                else if (prevNo >= 100 && prevNo <= 999)
+                {
+                    newNo = "PT" + "00" + prevNo;
+                }
+                else if (prevNo >= 1000 && prevNo <= 9999)
+                {
+                    newNo = "PT" + "0" + prevNo;
+                }
+                else if (prevNo >= 10000 && prevNo <= 9999)
+                {
+                    newNo = "PT" + prevNo.ToString();
+                }
+                return newNo;
             }
-            else if (prevNo >= 100 && prevNo <= 999)
+
+            if (type == "DOC")
             {
-                newNo = "OT" + "00" + prevNo;
+                prevNo = prevNo + 1;
+                string newNo = string.Empty;
+                if (prevNo >= 0 && prevNo <= 9)
+                {
+                    newNo = "DOC" + "0000" + prevNo;
+                }
+                else if (prevNo >= 10 && prevNo <= 99)
+                {
+                    newNo = "DOC" + "000" + prevNo;
+                }
+                else if (prevNo >= 100 && prevNo <= 999)
+                {
+                    newNo = "DOC" + "00" + prevNo;
+                }
+                else if (prevNo >= 1000 && prevNo <= 9999)
+                {
+                    newNo = "DOC" + "0" + prevNo;
+                }
+                else if (prevNo >= 10000 && prevNo <= 9999)
+                {
+                    newNo = "DOC" + prevNo.ToString();
+                }
+                return newNo;
             }
-            else if (prevNo >= 1000 && prevNo <= 9999)
+
+            else
             {
-                newNo = "OT" + "0" + prevNo;
+                return "some error occured";
             }
-            else if (prevNo >= 10000 && prevNo <= 9999)
-            {
-                newNo = "OT" + prevNo.ToString();
-            }
-            return newNo;
         }
         public static int getNumberOnly(string str, int extractGigit)
         {

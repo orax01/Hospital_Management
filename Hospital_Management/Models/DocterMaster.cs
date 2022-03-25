@@ -11,7 +11,7 @@ namespace Hospital_Management.Models
     {
         [Key]
         public int Id { get; set; }
-        [Display(Name = "Docter ID"), Required]
+        [Display(Name = "Docter ID"), Required(ErrorMessage ="Value required")]
         public string Docter_id { get; set; }
         [Display(Name = "Docter Name"), Required]
         public string Docter_Name { get; set; }

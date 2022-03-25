@@ -32,5 +32,7 @@ namespace DataLayer
         public virtual DbSet<Tbl_Indoor> Tbl_Indoor { get; set; }
         public virtual DbSet<Tbl_MasterPathology> Tbl_MasterPathology { get; set; }
         public virtual DbSet<Tbl_PathologyTest> Tbl_PathologyTest { get; set; }
+
+        public System.Data.Entity.DbSet<Hospital_Management.Models.OutDoor> OutDoors { get; set; }
     }
 }
